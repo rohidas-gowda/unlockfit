@@ -1,48 +1,12 @@
 [{
   "_id": {
-    "$oid": "6477212b8668739b7b8b82fe"
-  },
-  "email": "rohidas@example.com",
-  "name": "Rohidas",
-  "dailydate": "2023-05-24",
-  "idealweight": 60,
-  "currentweight": 70,
-  "__v": 0,
-  "inkg": 0
-},
-{
-  "_id": {
-    "$oid": "647729cbe7289d3aa1c9af40"
-  },
-  "email": "rohidas@example.com",
-  "name": "Rohidas",
-  "dailydate": "2023-05-25",
-  "idealweight": 60,
-  "currentweight": 70,
-  "__v": 0,
-  "inkg": 0
-},
-{
-  "_id": {
-    "$oid": "647729d50925ba1f9d86093f"
-  },
-  "email": "rohidas@example.com",
-  "name": "Rohidas",
-  "dailydate": "2023-05-26",
-  "idealweight": 60,
-  "currentweight": 69,
-  "__v": 0,
-  "inkg": 0
-},
-{
-  "_id": {
     "$oid": "647729da40e821de56a2f1ec"
   },
   "email": "rohidas@example.com",
   "name": "Rohidas",
   "dailydate": "2023-05-27",
   "idealweight": 60,
-  "currentweight": 67,
+  "currentweight": 62,
   "__v": 0,
   "inkg": 0
 },
@@ -54,7 +18,7 @@
   "name": "Rohidas",
   "dailydate": "2023-05-28",
   "idealweight": 60,
-  "currentweight": 6,
+  "currentweight": 59,
   "__v": 0,
   "inkg": 0
 },
@@ -66,57 +30,9 @@
   "name": "Rohidas",
   "dailydate": "2023-05-29",
   "idealweight": 60,
-  "currentweight": 68,
+  "currentweight": 61,
   "__v": 0,
   "inkg": 0
-},
-{
-  "_id": {
-    "$oid": "647729f9ea3fc37944dd48ec"
-  },
-  "email": "rohidas@example.com",
-  "name": "Rohidas",
-  "dailydate": "2023-05-30",
-  "idealweight": 60,
-  "currentweight": 65,
-  "__v": 0,
-  "inkg": 0
-},
-{
-  "_id": {
-    "$oid": "64772ab608b657136d3a8161"
-  },
-  "email": "john@example.com",
-  "name": "John",
-  "dailydate": "2023-05-24",
-  "idealweight": 70,
-  "currentweight": 85,
-  "__v": 0,
-  "inkg": 1
-},
-{
-  "_id": {
-    "$oid": "64772ad62b75e28cb7690e0a"
-  },
-  "email": "john@example.com",
-  "name": "John",
-  "dailydate": "2023-05-25",
-  "idealweight": 70,
-  "currentweight": 83,
-  "__v": 0,
-  "inkg": 1
-},
-{
-  "_id": {
-    "$oid": "64772adcd498d47ba5705c5a"
-  },
-  "email": "john@example.com",
-  "name": "John",
-  "dailydate": "2023-05-26",
-  "idealweight": 70,
-  "currentweight": 84,
-  "__v": 0,
-  "inkg": 1
 },
 {
   "_id": {
@@ -163,42 +79,6 @@
   "dailydate": "2023-05-30",
   "idealweight": 70,
   "currentweight": 81,
-  "__v": 0,
-  "inkg": 1
-},
-{
-  "_id": {
-    "$oid": "64772bbdaa3d123e51b93461"
-  },
-  "email": "jane@example.com",
-  "name": "Jane",
-  "dailydate": "2023-05-24",
-  "idealweight": 55,
-  "currentweight": 54,
-  "__v": 0,
-  "inkg": 1
-},
-{
-  "_id": {
-    "$oid": "64772bc373a4c5df0123c44c"
-  },
-  "email": "jane@example.com",
-  "name": "Jane",
-  "dailydate": "2023-05-25",
-  "idealweight": 55,
-  "currentweight": 56,
-  "__v": 0,
-  "inkg": 1
-},
-{
-  "_id": {
-    "$oid": "64772bc57c0ed23a61bdc5f2"
-  },
-  "email": "jane@example.com",
-  "name": "Jane",
-  "dailydate": "2023-05-26",
-  "idealweight": 55,
-  "currentweight": 55,
   "__v": 0,
   "inkg": 1
 },

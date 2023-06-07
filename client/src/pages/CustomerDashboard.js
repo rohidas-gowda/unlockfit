@@ -17,35 +17,35 @@ function CustomerDashboard() {
   const [idealWeightKg, setIdealWeightKg] = useState("");
 
   useEffect(() => {
-    async function fetchCustomerReport() {
-      setLoading(true);
-      const response = await fetch(
-        "http://localhost:1337/api/getCustomerData",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email,
-          }),
-        }
-      );
-
-      const data = await response.json();
-      setCustomerReport(data.weight)
-      setKgPounds(data.weight[0].inkg)
-      setLoading(false);
-    }
-
     fetchCustomerReport();
   }, [email]);
 
+  async function fetchCustomerReport() {
+    setLoading(true);
+    const response = await fetch(
+      "http://localhost:1337/api/getCustomerData",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+        }),
+      }
+    );
+
+    const data = await response.json();
+    setCustomerReport(data.weight);
+    setKgPounds(data.weight[0].inkg);
+    setLoading(false);
+  }
+
   async function postCustomerData(event) {
     event.preventDefault();
-    if(kgPounds === "1"){
+    if (kgPounds === "1") {
       const currentWeightInKG = currentweight * 0.45;
-      setCurrentWeightKg(currentWeightInKG)
+      setCurrentWeightKg(currentWeightInKG);
       const idealWeightInKG = idealweight * 0.45;
       setIdealWeightKg(idealWeightInKG);
     } else {
@@ -64,7 +64,7 @@ function CustomerDashboard() {
         date,
         currentWeightKg,
         idealWeightKg,
-        kgPounds
+        kgPounds,
       }),
     });
 
@@ -77,6 +77,8 @@ function CustomerDashboard() {
     } else {
       alert("Check the Data");
     }
+
+    fetchCustomerReport();
   }
 
   return (
@@ -117,17 +119,20 @@ function CustomerDashboard() {
 
               <div style={{ padding: "12px" }}>
                 <label style={{ marginLeft: "40px" }}>Weight's In</label>
-                <select style={{
-                  marginLeft: "50px",
-                  width: "160px",
-                  height: "20px",
-                  border: "1px solid #d2a72b",
-                  outline: "none"
-                }} value={kgPounds} onChange={(e) => setKgPounds(e.target.value)}>
+                <select
+                  style={{
+                    marginLeft: "50px",
+                    width: "160px",
+                    height: "20px",
+                    border: "1px solid #d2a72b",
+                    outline: "none",
+                  }}
+                  value={kgPounds}
+                  onChange={(e) => setKgPounds(e.target.value)}
+                >
                   <option value="0">KG</option>
                   <option value="1">Pounds</option>
                 </select>
-                
               </div>
 
               <div style={{ padding: "12px" }}>
@@ -209,22 +214,39 @@ function CustomerDashboard() {
               <tbody>
                 <tr>
                   <th style={{ color: "#D2A72B" }}>Date</th>
-                  <th style={{ color: "#D2A72B" }}>Ideal Weight{(kgPounds === 1) ? " ( Pounds )" : " ( KG )"}</th>
-                  <th style={{ color: "#D2A72B" }}>Current Weight{(kgPounds === 1) ? " ( Pounds )" : " ( KG )"}</th>
+                  <th style={{ color: "#D2A72B" }}>
+                    Ideal Weight{kgPounds === "1" ? " ( Pounds )" : " ( KG )"}
+                  </th>
+                  <th style={{ color: "#D2A72B" }}>
+                    Current Weight{kgPounds === "1" ? " ( Pounds )" : " ( KG )"}
+                  </th>
                 </tr>
                 {loading ? (
                   <tr></tr>
                 ) : (
                   customerReport.map((value, key) => (
-                    <tr key={key} style={{ backgroundColor: (value.idealweight.toFixed(2)) >= (value.currentweight.toFixed(2)) ? "#c0f6c0" : "#fce8e8"}}>
+                    <tr
+                      key={key}
+                      style={{
+                        backgroundColor:
+                          value.idealweight.toFixed(2) >=
+                          value.currentweight.toFixed(2)
+                            ? "#c0f6c0"
+                            : "#fce8e8",
+                      }}
+                    >
                       <td style={{ textAlign: "center", height: "32px" }}>
                         {value.dailydate}
                       </td>
                       <td style={{ textAlign: "center", height: "32px" }}>
-                        { (kgPounds === "1") ? value.idealweight.toFixed(2) : (value.idealweight * 2.20462).toFixed(2)}
+                        {kgPounds === "1"
+                          ? (value.idealweight * 2.20462).toFixed(2)
+                          : value.idealweight.toFixed(2)}
                       </td>
                       <td style={{ textAlign: "center", height: "32px" }}>
-                        { (kgPounds === "1") ? value.currentweight.toFixed(2) : (value.currentweight * 2.20462).toFixed(2)}
+                        {kgPounds === "1"
+                          ? (value.currentweight * 2.20462).toFixed(2)
+                          : value.currentweight.toFixed(2)}
                       </td>
                     </tr>
                   ))
